@@ -35,6 +35,7 @@ jobs:
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v3
         with:
+          aws-region: us-west-2
           role-to-assume: arn:aws:iam::545517370958:role/devkevhub-deployer
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
       - name: Build, tag, and push image to Amazon ECR
