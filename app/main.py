@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.routers import items, users, grimoire
+from .routers import items, users, grimoire
 
 app = FastAPI()
 
