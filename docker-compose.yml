@@ -1,0 +1,11 @@
+version: "3"
+services:
+  core-api:
+    build: .
+    environment:
+      - PYTHONPATH=/
+    container_name: "devkevhub"
+    ports:
+      - "8000:80"
+    volumes:
+      - ./app:/app
