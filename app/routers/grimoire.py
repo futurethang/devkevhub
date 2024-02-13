@@ -8,17 +8,13 @@ router = APIRouter()
 
 @router.get("/grimoire/")
 async def grimoire_welcome():
-    # Get the existing completions from the session data
     test_strings = session.get_data("test_string")
     
-    # If there are no existing completions, initialize it as an empty list
     if test_strings is None:
         test_strings = []
     
-    # Append the new completion to the list of existing completions
     test_strings.append("Another One!")
     
-    # Update the session data with the new list of completions
     session.update_data("test_string", test_strings)
     print('test_strings', session.get_data("test_string"))
     return "Grimoire of the Gardening Arts!"
