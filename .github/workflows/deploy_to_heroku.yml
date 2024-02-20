@@ -36,6 +36,8 @@ jobs:
         run: |
           heroku config:set SECRET_KEY=${{ secrets.SECRET_KEY }} --app ${HEROKU_APP_NAME}
           heroku config:set ALGORITHM=${{ secrets.ALGORITHM }} --app ${HEROKU_APP_NAME}
+          heroku config:set USERNAME=${{ secrets.USERNAME }} --app ${HEROKU_APP_NAME}
+          heroku config:set PASSWORD=${{ secrets.PASSWORD }} --app ${HEROKU_APP_NAME}
 
       - name: Release image to Heroku
         env:
